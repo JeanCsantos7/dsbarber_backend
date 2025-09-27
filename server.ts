@@ -1,8 +1,9 @@
-
+import dotenv from "dotenv"
 import app from "./app"
 
+dotenv.config();
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const url = `http://localhost:${PORT}`;
 
  app.listen(PORT, () => {
