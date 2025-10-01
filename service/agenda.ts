@@ -86,7 +86,7 @@ class AgendaService {
  }
 
   async createDate(date: string) {
-    if (!date ) {
+    if (!date) {
       throw new Error("Dados incompletos");
     } 
 
@@ -98,7 +98,7 @@ class AgendaService {
   
 
 
-    return {resultDate, id_datas: resultDate.insertId};
+    return resultDate
 
 
   }

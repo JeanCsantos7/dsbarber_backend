@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import AdminRepositorie from "../repositories/admin";
 import AdminModel from "../model/admin";
 import jsonwebtoken from "jsonwebtoken";
-import dotenv from "dotenv";~
+import dotenv from "dotenv";
 
 dotenv.config();
 

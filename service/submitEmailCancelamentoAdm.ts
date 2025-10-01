@@ -17,7 +17,7 @@ class submitEmailCancelamentoAdmService{
 
         const info = transporter.sendMail({
             from: `"Ds Barber" <${process.env.GOOGLE_EMAIL_ADMIN}>`,
-            to: "jean.carlosgvds48@gmail.com",
+            to: response.emailcliente,
             subject: "Cancelamento de Agendamento!",
              html: `
       <div style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 25px; width: 100%; box-sizing: border-box;">
