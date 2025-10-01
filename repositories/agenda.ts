@@ -5,14 +5,14 @@ import HorariosMarcadosModel from "../model/horariosMarcados";
 
 
 class AgendaRepositorie {
-  async createHours(id_data: number, hour: string) {
+  async createHours(id_data: number, horas: string) {
     const sql = "INSERT INTO horarios ( id_data, horas ) VALUES (?, ?)";
   
 
     const [result] = await connect.execute(sql, [
     
       id_data,
-      hour, 
+      horas, 
       
     
     ]);

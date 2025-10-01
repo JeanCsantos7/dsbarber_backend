@@ -6,13 +6,13 @@ import AgendaRepositorie from "../repositories/agenda";
 
 
 class AgendaService {
-  async createHours( id_data: number, hours: string) {
+  async createHours( id_data: number, horas: string) {
 
-    if (!hours || !id_data) {
+    if (!horas || !id_data) {
       throw new Error("Dados incompletos");
     }
 
-    const getHour = await AgendaRepositorie.getHours(id_data, hours);
+    const getHour = await AgendaRepositorie.getHours(id_data, horas);
  
 
 
@@ -21,7 +21,7 @@ class AgendaService {
     throw new Error("Horário já cadastrado");
    }
   
-    const result  = await AgendaRepositorie.createHours(id_data, hours);
+    const result  = await AgendaRepositorie.createHours(id_data, horas);
 
   
     
