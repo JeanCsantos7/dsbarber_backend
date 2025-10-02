@@ -5,18 +5,20 @@ class submitEmailCancelamentoAdmService{
   
     async cancelarAgendamentoAdm(response: SubmitEmailCancelAdm){
       
-      
+          console.log(response.emailcliente)
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
+        const transporter = await nodemailer.createTransport({
+            host: 'smtp-relay.brevo.com',
+            port: 587,
+            secure: false,
             auth:{
-                user: process.env.GOOGLE_EMAIL_ADMIN,
-                pass: process.env.GOOGLE_APP_PASSWORD 
+                user: process.env.BREVO_USER,
+                pass: process.env.BREVO_API_KEY
             }
         })
 
-        const info = transporter.sendMail({
-            from: `"Ds Barber" <${process.env.GOOGLE_EMAIL_ADMIN}>`,
+        const info = await transporter.sendMail({
+            from: `"Ds Barber" <${process.env.BREVO_USER}>`,
             to: response.emailcliente,
             subject: "Cancelamento de Agendamento!",
              html: `
@@ -33,7 +35,14 @@ class submitEmailCancelamentoAdmService{
       </div>
       `
                 
-        })
+        }
+
+       
+      
+      
+      )
+
+     
 
         return info;
         
