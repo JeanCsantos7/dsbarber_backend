@@ -139,7 +139,8 @@ async getFreeDates(): Promise<RowDataPacket[]> {
     hm.nomecliente,
     hm.servico, 
     hm.telefone,
-    hm.id_horas 
+    hm.id_horas ,
+    hm.emailcliente
   FROM horarios h
   INNER JOIN datas d ON d.id_datas = h.id_data
   INNER JOIN horariosmarcados hm ON hm.id_horas = h.id_horas

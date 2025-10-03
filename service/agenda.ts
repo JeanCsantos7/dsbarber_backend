@@ -98,7 +98,7 @@ class AgendaService {
   
 
 
-    return resultDate
+    return {resultDate, id_datas: resultDate.insertId}
 
 
   }
