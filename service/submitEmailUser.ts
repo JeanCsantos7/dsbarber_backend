@@ -17,17 +17,20 @@ class SubtmitEmailUser{
 
    const transporter = nodemailer.createTransport({
     
-    service: "gmail",
-    auth: {
-        user: process.env.GOOGLE_EMAIL_ADMIN,
-        pass: process.env.GOOGLE_APP_PASSWORD
-    }
+      host: 'smtp-relay.brevo.com',
+            port: 587,
+            secure: false,
+            
+            auth:{
+                user: process.env.BREVO_USER,
+                pass: process.env.BREVO_API_KEY
+            }
      
    })
 
   const info = await transporter.sendMail({
 
-    from: process.env.GOOGLE_EMAIL_ADMIN,
+    from: `"Ds Barber" <${"dsbarber11@gmail.com"}>`,
     to: response.email,
     subject: "Confirmação de Agendamento!",
     text: `Olá, ${response.nome} você possui um agendamento realizado na DS Barber para o dia ${response.data}`,

@@ -8,16 +8,19 @@ class submitEmailCancelamentoUserService{
       
 
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+             host: 'smtp-relay.brevo.com',
+            port: 587,
+            secure: false,
+            
             auth:{
-                user: process.env.GOOGLE_EMAIL_ADMIN,
-                pass: process.env.GOOGLE_APP_PASSWORD 
+                user: process.env.BREVO_USER,
+                pass: process.env.BREVO_API_KEY
             }
         })
 
         const info = transporter.sendMail({
             from: response.emailcliente,
-            to: process.env.GOOGLE_EMAIL_ADMIN,
+            to: `"Ds Barber" <${"dsbarber11@gmail.com"}>`,
             subject: "Cancelamento de Agendamento!",
              html: `
       <div style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 25px; width: 100%; box-sizing: border-box;">

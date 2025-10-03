@@ -13,15 +13,18 @@ class SubmitEmailService {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GOOGLE_EMAIL_ADMIN,
-        pass: process.env.GOOGLE_APP_PASSWORD,
-      },
+    host: 'smtp-relay.brevo.com',
+            port: 587,
+            secure: false,
+            
+            auth:{
+                user: process.env.BREVO_USER,
+                pass: process.env.BREVO_API_KEY
+            }
     });
 
     const info = await transporter.sendMail({
-      from: `"Ds Barber" <${process.env.GOOGLE_EMAIL_ADMIN}>`,
+      from: `"Ds Barber" <${"dsbarber11@gmail.com"}>`,
       to: "jean.carlosgvds48@gmail.com",
       subject: "Confirmação de Agendamento!",
       text: `Você tem um novo agendamento de ${response.name} no dia ${response.date}`, 
