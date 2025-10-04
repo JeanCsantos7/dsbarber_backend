@@ -25,7 +25,7 @@ class SubmitEmailService {
 
     const info = await transporter.sendMail({
       from: `"Ds Barber" <${"dsbarber11@gmail.com"}>`,
-      to: response.email,
+      to: `"Ds Barber" <${"dsbarber11@gmail.com"}>`,
       subject: "Confirmação de Agendamento!",
       text: `Você tem um novo agendamento de ${response.name} no dia ${response.date}`, 
       html: `

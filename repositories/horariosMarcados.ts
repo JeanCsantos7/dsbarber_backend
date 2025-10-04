@@ -41,7 +41,7 @@ class HorariosMarcados {
     const deleteSql = "DELETE FROM horariosmarcados WHERE id_marcados = ?";
     const [result]: any = await connect.query(deleteSql, [
       id_marcados,
-      data.id_horas,
+      data.id_horas
     ]);
     if (!result) {
       throw new Error("Nenhum agendamento encontrado com o ID fornecido!");
