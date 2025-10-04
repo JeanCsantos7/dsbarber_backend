@@ -5,8 +5,8 @@ class submitEmailCancelamentoUserService{
 
     async cancelarAgendamentoUser(response: SubmitEmailCancelUser){
 
-      
-
+     
+ 
         const transporter = nodemailer.createTransport({
              host: 'smtp-relay.brevo.com',
             port: 587,
@@ -19,8 +19,9 @@ class submitEmailCancelamentoUserService{
         })
 
         const info = transporter.sendMail({
-            from: response.emailcliente,
-            to: `"Ds Barber" <${"dsbarber11@gmail.com"}>`,
+           from: `"DS Barber" <${process.env.BREVO_USER}>`,
+  to: `"Ds Barber" <dsbarber11@gmail.com>`,
+
             subject: "Cancelamento de Agendamento!",
              html: `
       <div style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 25px; width: 100%; box-sizing: border-box;">

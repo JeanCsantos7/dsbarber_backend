@@ -6,7 +6,7 @@ import submitEmailCancelUser from "../service/submitEmailCancelUser";
 
 class SubmitEmailCancelUserController{
 
-    async cancelarAgendamento(req: any, res: any){
+    async cancelarAgendamento(req: Request, res: Response){
      
         try {
             
