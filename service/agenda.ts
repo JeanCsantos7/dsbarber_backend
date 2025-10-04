@@ -93,7 +93,10 @@ class AgendaService {
     const resultDate : any = await AgendaRepositorie.createDate(date);
    
 
-
+  if(resultDate.length > 0)
+  {
+    throw new Error("a data selecionada já foi cadastrada");
+  }
   
   
 

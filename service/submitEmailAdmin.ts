@@ -13,7 +13,7 @@ class SubmitEmailService {
     }
 
     const transporter = nodemailer.createTransport({
-    host: 'smtp-relay.brevo.com',
+            host: 'smtp-relay.brevo.com',
             port: 587,
             secure: false,
             
@@ -25,7 +25,7 @@ class SubmitEmailService {
 
     const info = await transporter.sendMail({
       from: `"Ds Barber" <${"dsbarber11@gmail.com"}>`,
-      to: "jean.carlosgvds48@gmail.com",
+      to: response.email,
       subject: "Confirmação de Agendamento!",
       text: `Você tem um novo agendamento de ${response.name} no dia ${response.date}`, 
       html: `

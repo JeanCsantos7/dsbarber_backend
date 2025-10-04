@@ -11,6 +11,8 @@ class HorariosMarcados
     throw new Error("O preenchimento de todos os dados são obrigatórios!")
    }
 
+  
+
 
  
 
