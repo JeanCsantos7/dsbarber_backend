@@ -19,7 +19,7 @@ class submitEmailCancelamentoUserService{
         })
 
         const info = transporter.sendMail({
-           from: `"DS Barber" <${process.env.BREVO_USER}>`,
+           from: `"Ds Barber" <dsbarber11@gmail.com>`,
   to: `"Ds Barber" <dsbarber11@gmail.com>`,
 
             subject: "Cancelamento de Agendamento!",
